@@ -9,7 +9,7 @@ print london_location
 
 ### "URL"
 
-map_response=map_at(51.5072, -0.1275, zoom=10)
+map_response=map_at(*london_location, zoom=10)
 url=map_response.url
 print url
 
