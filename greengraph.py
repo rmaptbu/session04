@@ -3,10 +3,6 @@ from mapurl import map_at
 import imagemanipulation as im
 from locationsequence import location_sequence
 
-
-#count number of green pixels on map
-#print im.count_green_in_png(map_at(*london_location))
-
 #count number of green pixels between london and birmingham
 [im.count_green_in_png(map_at(*location,zoom=10,satellite=True))
             for location in location_sequence(
