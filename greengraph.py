@@ -7,25 +7,21 @@ from locationsequence import location_sequence
 london_location=geolocate("London")
 print london_location
 
-### "URL"
-
+#find url of map of london in google maps
 map_response=map_at(*london_location, zoom=10)
 url=map_response.url
 print url
 
-### "png"
-
+#count number of green pixels on map
 print im.count_green_in_png(map_at(*london_location))
 
-### "points"
-
-
-[im.count_green_in_png(map_at(*location,zoom=10,satellite=True))
+#find number of green pixels from London to Birmingham
+greens=[im.count_green_in_png(map_at(*location,zoom=10,satellite=True))
             for location in location_sequence(
                 geolocate("London"),
                 geolocate("Birmingham"),
                 10)]
-
+				
 
 ### "save"
 import matplotlib
