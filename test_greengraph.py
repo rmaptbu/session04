@@ -2,11 +2,12 @@ from nose.tools import assert_equal
 
 def test_greengraph():
 	#regression test
-	import greengraph
 	from PIL import Image
 	import math
+	import greengraph	
 	assert_equal(Image.open("greengraph_test.png").histogram(), 
 	Image.open("greengraph.png").histogram())
+	
 	
 #unit tests
 def test_geolocate():
@@ -21,4 +22,4 @@ def test_mapurl():
 def test_imagemanipulation():
 	import imagemanipulation as im
 	from mapurl import map_at
-	assert_equal(im.count_green_in_png(map_at(51.5073509, -0.1277583)), 12008)
+	assert_equal(im.count_green_in_png(map_at(51.5073509, -0.1277583)), 12001)
