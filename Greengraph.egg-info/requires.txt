@@ -1,6 +1,4 @@
 geopy
-png
-itertools
-StringIO
+pypng
 numpy
 requests
