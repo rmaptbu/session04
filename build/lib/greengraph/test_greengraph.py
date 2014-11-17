@@ -1,4 +1,4 @@
-from nose.tools import assert_equal, assert_almost_equal
+from nose.tools import assert_equal
 
 def test_greengraph():
 	#regression test
@@ -12,7 +12,8 @@ def test_greengraph():
 #unit tests
 def test_geolocate():
 	from geolocate import geolocate
-	assert_almost_equal(geolocate("london"), (51.5073509, -0.1277583))
+	import numpy as np
+	np.testing.assert_almost_equal(geolocate("london"), (51.5073509, -0.1277583))
 	
 def test_mapurl():
 	from mapurl import map_at
@@ -21,4 +22,4 @@ def test_mapurl():
 def test_imagemanipulation():
 	import imagemanipulation as im
 	from mapurl import map_at
-	assert_almost_equal(im.count_green_in_png(map_at(51.5073509, -0.1277583)), 12001, delta=20)
+	assert_equal(im.count_green_in_png(map_at(51.5073509, -0.1277583)), 12001)
